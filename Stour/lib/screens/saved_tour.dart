@@ -21,15 +21,15 @@ class _SavedTourState extends State<SavedTour> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Đổi tên'),
+          title: const Text('Rename'),
           content: TextField(
             controller: _tourNameController,
-            decoration: const InputDecoration(hintText: 'Tên mới'),
+            decoration: const InputDecoration(hintText: 'New name'),
           ),
           actions: <Widget>[
             TextButton(
               child: const Text(
-                'Hủy',
+                'Cancel',
                 style: TextStyle(
                   color: Color.fromARGB(255, 35, 52, 10),
                 ),
@@ -40,7 +40,7 @@ class _SavedTourState extends State<SavedTour> {
               },
             ),
             TextButton(
-              child: const Text('Lưu',
+              child: const Text('Save',
                   style: TextStyle(
                     color: Color.fromARGB(255, 35, 52, 10),
                   )),
@@ -69,7 +69,7 @@ class _SavedTourState extends State<SavedTour> {
               ListTile(
                 leading: const Icon(Icons.edit),
                 title: const Text(
-                  'Đổi tên',
+                  'Rename',
                   style: TextStyle(
                     color: Color.fromARGB(255, 35, 52, 10),
                   ),
@@ -82,7 +82,7 @@ class _SavedTourState extends State<SavedTour> {
               ListTile(
                 leading: const Icon(Icons.delete),
                 title: const Text(
-                  'Xóa lịch trình',
+                  'Delete Tour',
                   style: TextStyle(
                     color: Color.fromARGB(255, 35, 52, 10),
                   ),
@@ -105,12 +105,12 @@ class _SavedTourState extends State<SavedTour> {
       return Scaffold(
         appBar: AppBar(
           title: const Text(
-            'LỊCH TRÌNH ĐÃ LƯU',
+            'Saved Tours',
             style: TextStyle(
               color: Color.fromARGB(255, 35, 52, 10),
             ),
           ),
-          backgroundColor: Constants.lightgreen,
+          backgroundColor: Constants.palette3,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back,
                 color:
@@ -128,12 +128,12 @@ class _SavedTourState extends State<SavedTour> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Thật trống trải...',
+                  'Is anybody there?',
                   style: GoogleFonts.roboto(
                       fontSize: 30, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 30),
-                Text('Có vẻ như bạn chưa tạo cho mình một lịch trình nào',
+                Text('Looks like you have not created any tours yet.',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                       color: const Color.fromARGB(255, 35, 52, 10),
@@ -141,7 +141,7 @@ class _SavedTourState extends State<SavedTour> {
                     )),
                 const SizedBox(height: 20),
                 Text(
-                  'Hãy tạo cho mình một lịch trình bằng chức năng thiết kế lịch trình ngay nhé!',
+                  'Try creating a new tour customized to your needs using our Initerary Planner.',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.roboto(
                     color: const Color.fromARGB(255, 35, 52, 10),
@@ -157,12 +157,12 @@ class _SavedTourState extends State<SavedTour> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'LỊCH TRÌNH ĐÃ LƯU',
+          'Saved Tours',
           style: TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back,
               color: Color.fromARGB(255, 35, 52, 10)), // Change the color here
@@ -179,8 +179,8 @@ class _SavedTourState extends State<SavedTour> {
           return ListTile(
             title: Text(tour.name,
                 style: const TextStyle(fontWeight: FontWeight.w500)),
-            subtitle: Text(
-                'Được tạo vào: ${DateFormat.yMd().format(tour.timeSaved)}'),
+            subtitle:
+                Text('Created in: ${DateFormat.yMd().format(tour.timeSaved)}'),
             onTap: () {
               Navigator.push(
                 context,

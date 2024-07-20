@@ -59,7 +59,7 @@ class _ProfileState extends State<Profile> {
                 color:
                     _selectedEvent == 1 ? Constants.lightPrimary : Colors.white,
                 onPressed: () {},
-                child: Text("THÊM BÀI VIẾT",
+                child: Text("POST",
                     style: TextStyle(
                       color: _selectedEvent == 1
                           ? Constants.lightPrimary
@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
                     ),
                   );
                 },
-                child: Text("LỊCH TRÌNH ĐÃ LƯU",
+                child: Text("YOUR TOURS",
                     style: TextStyle(
                       color: _selectedEvent == 1
                           ? Constants.lightPrimary

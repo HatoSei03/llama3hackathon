@@ -22,7 +22,7 @@ Row profileActivity() {
             ),
             subtitle: Center(
                 child: Text(
-              "Bài Đăng",
+              "Posts",
               style: TextStyle(fontSize: 13),
             )),
           ),
@@ -47,7 +47,7 @@ Row profileActivity() {
           ),
           subtitle: Center(
               child: Text(
-            "Người Theo Dõi",
+            "Followers",
             style: TextStyle(fontSize: 13),
           )),
         ),
@@ -65,7 +65,7 @@ Row profileActivity() {
           ),
           subtitle: Center(
             child: Text(
-              "Đang Theo Dõi",
+              "Following",
               style: TextStyle(fontSize: 13),
             ),
           ),

@@ -111,12 +111,12 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
       return Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Lịch Trình Dành Cho Bạn',
+            'Your Schedule',
             style: TextStyle(
               color: Color.fromARGB(255, 35, 52, 10),
             ),
           ),
-          backgroundColor: Constants.lightgreen,
+          backgroundColor: Constants.palette3,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back,
                 color:
@@ -134,7 +134,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Rất Tiếc!',
+                  'We are very sorry!',
                   style: GoogleFonts.roboto(
                       color: const Color.fromARGB(255, 35, 52, 10),
                       fontSize: 30,
@@ -142,7 +142,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                 ),
                 const SizedBox(height: 30),
                 Text(
-                    'Chúng tôi không thể đưa ra lịch trình phù hợp dựa trên những yêu cầu bạn đưa ra hoặc bạn đang ở địa điểm chưa được hỗ trợ bởi phần mềm!',
+                    'We could not come up with any suitable schedule for you at the moment.',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                       color: const Color.fromARGB(255, 35, 52, 10),
@@ -150,7 +150,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                     )),
                 const SizedBox(height: 20),
                 Text(
-                  'Xin hãy thử lại với những điều kiện khác!',
+                  'Please try again with different settings.',
                   style: GoogleFonts.roboto(
                     color: const Color.fromARGB(255, 35, 52, 10),
                     fontSize: 16,
@@ -164,9 +164,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     }
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
         title: const Text(
-          'Lịch Trình Dành Cho Bạn',
+          'Your Schedule',
           style: TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),
@@ -201,7 +201,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Tổng Quan',
+                            'Overall Information',
                             style: GoogleFonts.roboto(
                                 color: const Color.fromARGB(255, 35, 52, 10),
                                 fontSize: 22,
@@ -209,14 +209,14 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           ),
                           const SizedBox(height: 5),
                           Text(
-                            'Số ngày: ${res.length}',
+                            'Days: ${res.length}',
                             style: GoogleFonts.roboto(
                               fontSize: 14,
                               color: const Color.fromARGB(255, 35, 52, 10),
                             ),
                           ),
                           Text(
-                            'Số tiền ước tính: ${totalMoney.toStringAsFixed(0)}₫',
+                            'Estimated Cost: ${totalMoney.toStringAsFixed(0)}₫',
                             style: GoogleFonts.roboto(
                               color: const Color.fromARGB(255, 35, 52, 10),
                               fontSize: 14,
@@ -234,7 +234,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: const Text(
-                                    'Nhập tên cho lịch trình này',
+                                    'Give your tour a nickname: ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 35, 52, 10),
                                     ),
@@ -242,12 +242,12 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                                   content: TextField(
                                     controller: tourNameController,
                                     decoration: const InputDecoration(
-                                        hintText: 'Tên lịch trình'),
+                                        hintText: 'Tour name'),
                                   ),
                                   actions: <Widget>[
                                     TextButton(
                                       child: const Text(
-                                        'Hủy',
+                                        'Cancel',
                                         style: TextStyle(
                                           color:
                                               Color.fromARGB(255, 35, 52, 10),
@@ -260,7 +260,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                                     ),
                                     TextButton(
                                       child: const Text(
-                                        'Lưu',
+                                        'Save',
                                         style: TextStyle(
                                           color:
                                               Color.fromARGB(255, 35, 52, 10),
@@ -286,7 +286,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                             );
                           },
                           child: const Text(
-                            'Lưu lịch trình này',
+                            'Save this schedule',
                             style: TextStyle(
                               color: Color.fromARGB(255, 35, 52, 10),
                             ),

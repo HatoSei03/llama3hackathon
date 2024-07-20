@@ -21,12 +21,12 @@ class _CreateReviewScreenState extends State<CreateReviewScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'THÊM NHẬN XÉT',
+          'Add Review',
           style: TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back,
               color: Color.fromARGB(255, 35, 52, 10)), // Change the color here
@@ -42,7 +42,7 @@ class _CreateReviewScreenState extends State<CreateReviewScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Đánh giá địa điểm:',
+              'Rate This Attraction:',
               style: TextStyle(
                   color: Color.fromARGB(255, 35, 52, 10),
                   fontSize: 16,
@@ -60,7 +60,7 @@ class _CreateReviewScreenState extends State<CreateReviewScreen> {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Nhận xét:',
+              'Review:',
               style: TextStyle(
                   color: Color.fromARGB(255, 35, 52, 10),
                   fontSize: 16,
@@ -71,7 +71,7 @@ class _CreateReviewScreenState extends State<CreateReviewScreen> {
               controller: commentController,
               maxLines: 4,
               decoration: const InputDecoration(
-                hintText: 'Nhập đánh giá ở đây.',
+                hintText: 'Leave your impression here.',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -84,13 +84,13 @@ class _CreateReviewScreenState extends State<CreateReviewScreen> {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Constants.lightgreen,
+                    backgroundColor: Constants.palette3,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                   ),
                   child: const Text(
-                    'HỦY',
+                    'Cancel',
                     style: TextStyle(color: Color.fromARGB(255, 35, 52, 10)),
                   ),
                 ),
@@ -108,13 +108,13 @@ class _CreateReviewScreenState extends State<CreateReviewScreen> {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Constants.lightgreen,
+                    backgroundColor: Constants.palette3,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                   ),
                   child: const Text(
-                    'ĐĂNG BÀI',
+                    'Post',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),

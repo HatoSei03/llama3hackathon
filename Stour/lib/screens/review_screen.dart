@@ -20,7 +20,7 @@ class _ReviewScreenState<Reviews> extends State<ReviewScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ĐÁNH GIÁ',
+          'Reviews',
           style: TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),
@@ -33,7 +33,7 @@ class _ReviewScreenState<Reviews> extends State<ReviewScreen> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
       ),
       body:
           Center(child: GetUIAllReviewsByItemID(locationID: widget.locationID)),
@@ -52,8 +52,8 @@ class _ReviewScreenState<Reviews> extends State<ReviewScreen> {
             });
           }
         },
-        backgroundColor: Constants.lightgreen,
-        tooltip: "THÊM ĐÁNH GIÁ",
+        backgroundColor: Constants.palette3,
+        tooltip: "Leave a Review",
         child: const Icon(Icons.add, color: Colors.black),
       ),
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,

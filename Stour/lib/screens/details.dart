@@ -40,9 +40,9 @@ class _DetailScreenState extends State<DetailScreen> {
                   },
                 ),
                 Text(
-                  'CHI TIẾT',
+                  'Details',
                   style: GoogleFonts.poppins(
-                      color: Constants.lightPrimary,
+                      color: Constants.paletteDark,
                       fontWeight: FontWeight.w600,
                       fontSize: 20),
                 ),
@@ -91,9 +91,9 @@ class _DetailScreenState extends State<DetailScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.location_pin,
-                    color: Color.fromARGB(255, 44, 105, 224),
+                    color: Constants.palette2,
                     size: 25,
                   ),
                   const SizedBox(width: 5),
@@ -104,7 +104,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         widget.placeToDisplay.address,
                         style: GoogleFonts.poppins(
                           fontSize: 18,
-                          color: const Color.fromARGB(255, 44, 105, 224),
+                          color: Constants.palette2,
                         ),
                       ),
                     ),
@@ -150,17 +150,19 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                   const Spacer(),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ReviewScreen(
-                              locationID: widget.placeToDisplay.id),
-                        ),
-                      );
-                    },
-                    child: const Text('Đánh giá và nhận xét'),
-                  ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ReviewScreen(
+                                locationID: widget.placeToDisplay.id),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Leave a Review',
+                        style: TextStyle(color: Constants.palette1),
+                      )),
                 ],
               ),
             ),
@@ -172,7 +174,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   scrollDirection: Axis.vertical,
                   child: Text(
                     widget.placeToDisplay.history,
-                    style: GoogleFonts.poppins(fontSize: 18),
+                    style: GoogleFonts.poppins(
+                        fontSize: 18, color: Constants.paletteDark),
                   ),
                 ),
               ),

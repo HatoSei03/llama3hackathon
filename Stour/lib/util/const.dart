@@ -18,6 +18,13 @@ class Constants {
   static Color darkBG = const Color.fromARGB(0, 0, 0, 0);
   static Color ratingBG = const Color(0xFFfff000);
 
+  static Color palette4 = const Color(0xFFE6FF94);
+  static Color palette3 = const Color(0xFF9DDE8B);
+  static Color palette2 = const Color(0xFF40A578);
+  static Color palette1 = const Color(0xFF006769);
+  static Color paletteDark = const Color(0xFF201E43);
+  static Color paletteLight = const Color(0xFFE1F0DA);
+
   static ThemeData lightTheme = ThemeData(
     // backgroundColor: lightBG,
     primaryColor: lightPrimary,

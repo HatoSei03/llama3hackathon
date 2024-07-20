@@ -1,8 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
 
 String jsonData = '';
 
@@ -108,8 +106,9 @@ Freely explore the local markets and streets.
           currTime = item.replaceFirst(':', '');
           continue;
         } else if (item.contains('-')) {
-          currPlace = item.split('-')[0].trim();
-          currDescription = item.split('-')[1].trim();
+          currPlace = item.split(' - ')[0].trim();
+          item.replaceAll(currPlace, '');
+          currDescription = item;
           if (currDescription.contains('(')) {
             currPrice = currDescription.split('(')[1].split(')')[0];
             currDescription = currDescription.split('(')[0];

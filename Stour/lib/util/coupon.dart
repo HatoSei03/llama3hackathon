@@ -24,7 +24,7 @@ List<Coupon> listCoupon = [
     avaiable: 3,
     couponId: 'couponId1',
     discount: 5,
-    name: 'Mã giảm giá 5%',
+    name: '5% Off',
     startDate: 'startDate',
     endDate: 'endDate',
     listQuestion: [
@@ -40,7 +40,7 @@ List<Coupon> listCoupon = [
     avaiable: 100,
     couponId: 'couponId2',
     discount: 10,
-    name: 'Mã giảm giá 10%',
+    name: '10% Off On All Products',
     startDate: 'startDate',
     endDate: 'endDate',
     listQuestion: [
@@ -60,7 +60,7 @@ List<Coupon> listCoupon = [
     avaiable: 100,
     couponId: 'couponId3',
     discount: 10,
-    name: 'Mã giảm giá 15%',
+    name: '15% Off, Grab Em\' All',
     startDate: 'startDate',
     endDate: 'endDate',
     listQuestion: [

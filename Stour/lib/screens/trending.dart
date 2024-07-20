@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stour/util/const.dart';
 import 'package:stour/util/places.dart';
 import 'package:stour/widgets/search_card.dart';
 import 'package:stour/widgets/trending_place.dart';
@@ -11,9 +12,9 @@ class Trending extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: const Color(0xFFc3ff68),
+        backgroundColor: Constants.palette3,
         title: const Text(
-          "Địa Điểm Văn Hóa",
+          "Cultural Attractions",
           style: TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),

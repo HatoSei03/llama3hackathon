@@ -76,13 +76,13 @@ class HomeBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: Constants.ratingBG,
-      buttonBackgroundColor: Constants.darkgreen,
+      backgroundColor: Constants.palette3,
+      buttonBackgroundColor: Constants.palette1,
       index: 1,
       items: [
-        Icon(icons[0], size: 30, color: Constants.lightgreen),
-        Icon(icons[1], size: 30, color: Constants.lightgreen),
-        Icon(icons[2], size: 30, color: Constants.lightgreen),
+        Icon(icons[0], size: 30, color: Constants.palette2),
+        Icon(icons[1], size: 30, color: Constants.palette2),
+        Icon(icons[2], size: 30, color: Constants.palette2),
       ],
       onTap: onTap,
     );

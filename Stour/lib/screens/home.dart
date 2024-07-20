@@ -132,10 +132,10 @@ class _HomeState extends State<Home> {
             child: ListView(
               children: <Widget>[
                 const SizedBox(height: 10),
-                const Text(
-                  'Vị Trí Hiện Tại',
+                Text(
+                  'Current Location',
                   style: TextStyle(
-                    color: Color.fromARGB(255, 35, 52, 10),
+                    color: Constants.paletteDark,
                     fontSize: 20.0,
                     fontWeight: FontWeight.w800,
                   ),
@@ -146,11 +146,11 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                     height: 200, width: 300, child: GoogleMapsController()),
                 const SizedBox(height: 20.0),
-                buildPlaceRow('Địa Điểm Văn Hóa', places, context),
+                buildPlaceRow('Cultural Attractions', places, context),
                 const SizedBox(height: 3.0),
                 buildPlaceList(context, places),
                 const SizedBox(height: 5.0),
-                buildPlaceRow('Đặc Sản', food, context),
+                buildPlaceRow('Special Cuisines', food, context),
                 const SizedBox(height: 3.0),
                 buildPlaceList(context, food),
                 const SizedBox(height: 30),
@@ -192,14 +192,15 @@ Widget buildPlaceRow(String place, List<Place> source, BuildContext context) {
     children: <Widget>[
       Text(
         place,
-        style: const TextStyle(
+        style: TextStyle(
+          color: Constants.paletteDark,
           fontSize: 20.0,
           fontWeight: FontWeight.w800,
         ),
       ),
       TextButton(
         child: Text(
-          "Xem tất cả (${source.length})",
+          "See all (${source.length})",
           style: TextStyle(
             color: Constants.text,
           ),

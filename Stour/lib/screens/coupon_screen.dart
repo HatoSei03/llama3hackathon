@@ -16,7 +16,7 @@ class _CouponScreenState extends State<CouponScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'LẤY MÃ GIẢM GIÁ',
+          'Coupons',
           style: GoogleFonts.roboto(
             color: const Color.fromARGB(255, 35, 52, 10),
           ),
@@ -29,7 +29,7 @@ class _CouponScreenState extends State<CouponScreen> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
       ),
       body: ListView.builder(
         itemCount: listCoupon.length,
@@ -45,7 +45,7 @@ class _CouponScreenState extends State<CouponScreen> {
               ),
             ),
             subtitle:
-                Text('Áp dụng cho mọi địa điểm', style: GoogleFonts.roboto()),
+                Text('Apply to all locations', style: GoogleFonts.roboto()),
             onTap: () {
               Navigator.push(
                 context,

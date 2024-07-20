@@ -52,7 +52,7 @@ class _PostScreenState extends State<PostScreen> {
                             ),
                           ),
                           Text(
-                            "2 tháng trước",
+                            "2 months ago",
                             style: TextStyle(
                               color: Color.fromARGB(173, 35, 52, 10),
                             ),
@@ -67,14 +67,14 @@ class _PostScreenState extends State<PostScreen> {
                         const PopupMenuItem(
                           value: "delete",
                           child: Text(
-                            "Xóa Bài Viết",
+                            "Delete Post",
                             selectionColor: Color.fromARGB(255, 35, 52, 10),
                           ),
                         ),
                         const PopupMenuItem(
                           value: "save",
                           child: Text(
-                            "Lưu Bài Viết",
+                            "Save Post",
                             selectionColor: Color.fromARGB(255, 35, 52, 10),
                           ),
                         ),
@@ -91,7 +91,7 @@ class _PostScreenState extends State<PostScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               child: const Text(
-                "Bảo tàng có kiến trúc rất độc đáo, nó khiến mình cảm thấy rất bất ngờ về sự hòa hợp giữa màu sắc phương đông và phương tây. Mình đặt biệt rất ấn tượng và thích cầu thang xoắn ốc, những tác phẩm được trưng bài cũng rất nghệ thuật và đậm chất văn hóa từng thời kỳ nữa. Tui chụp được quá trời hình ở đây luôn á :3",
+                "The museum has very unique architecture, and I was pleasantly surprised by the harmony between Eastern and Western colors. I was especially impressed and fond of the spiral staircase. The exhibits are also very artistic and rich in the cultural essence of different eras. I took a ton of photos here! :3",
                 style: TextStyle(
                     fontSize: 18, color: Color.fromARGB(255, 35, 52, 10)),
               ),

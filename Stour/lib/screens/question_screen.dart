@@ -48,7 +48,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Câu hỏi số: ${count.toString()}/${widget.listquestion.length.toString()}',
+          'Question ${count.toString()}/${widget.listquestion.length.toString()}',
           style: GoogleFonts.roboto(
             color: const Color.fromARGB(255, 35, 52, 10),
           ),
@@ -61,7 +61,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
       ),
       body: Column(
         children: <Widget>[
@@ -115,8 +115,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                           return Colors.black;
                         },
                       ),
-                      backgroundColor: WidgetStateProperty.all<Color>(
-                          Constants.lightgreen),
+                      backgroundColor:
+                          WidgetStateProperty.all<Color>(Constants.palette3),
                       minimumSize:
                           WidgetStateProperty.all<Size>(const Size(120, 50)),
                     ),
@@ -126,7 +126,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                               ? true
                               : false);
                     },
-                    child: const Text('Đúng'),
+                    child: const Text('Correct'),
                   ),
                 ),
               ),
@@ -143,8 +143,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                           return Colors.black; // Màu mặc định khi không nhấn
                         },
                       ),
-                      backgroundColor: WidgetStateProperty.all<Color>(
-                          Constants.lightgreen),
+                      backgroundColor:
+                          WidgetStateProperty.all<Color>(Constants.palette3),
                       textStyle: WidgetStateProperty.all<TextStyle>(
                         const TextStyle(fontSize: 20),
                       ),
@@ -157,7 +157,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                               ? true
                               : false);
                     },
-                    child: const Text('Sai'),
+                    child: const Text('False'),
                   ),
                 ),
               )
@@ -176,13 +176,12 @@ class _QuestionResult extends StatelessWidget {
   @override
   Widget build(context) {
     String textRs = result < (valiResult)
-        ? 'Rất tiếc bạn đã không nhận được voucher từ STour trong lần chơi này!'
-        : 'Bạn đã xuất sắc trả lời chính xác các câu hỏi của STour! Hãy nhận phần quà của STour là một voucher nhé!';
-
+        ? 'You have failed to answer the questions! Thou shall not earn thy vouch!'
+        : 'You have excellently passed the test and aced our heart! Here\'s a voucher to thank you for your participation!';
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Kết quả',
+          'Result',
           style: GoogleFonts.roboto(
             color: const Color.fromARGB(255, 35, 52, 10),
           ),
@@ -205,7 +204,7 @@ class _QuestionResult extends StatelessWidget {
           children: <Widget>[
             Center(
               child: Text(
-                'KẾT QUẢ',
+                'Result',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                     fontSize: 35, fontWeight: FontWeight.w600),
@@ -213,7 +212,7 @@ class _QuestionResult extends StatelessWidget {
             ),
             const SizedBox(height: 45),
             Text(
-              'Số câu trả lời đúng: $result',
+              'Correct answers: $result',
               style: const TextStyle(
                 fontSize: 20,
                 color: Color.fromARGB(255, 49, 177, 107),
@@ -243,7 +242,7 @@ class _QuestionResult extends StatelessWidget {
                 );
               },
               child: Text(
-                'Trở về trang chủ',
+                'Home',
                 style: GoogleFonts.roboto(fontSize: 16),
               ),
             )
