@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:stour/screens/profile_post.dart';
 import 'package:stour/screens/saved_tour.dart';
+import 'package:stour/screens/chatbot.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -39,6 +40,24 @@ class _ProfileState extends State<Profile> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatbotSupportScreen(),
+            ),
+          );
+        },
+        tooltip: 'Floating Action Button',
+        backgroundColor: Constants.palette3, // Custom color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Round shape
+        ),
+        elevation: 2.0,
+        child: const Icon(Icons.question_answer),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 

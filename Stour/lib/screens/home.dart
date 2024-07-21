@@ -11,6 +11,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:stour/widgets/search_card.dart';
 import 'package:stour/screens/home_app_bar.dart';
 import 'package:flutter/services.dart';
+import 'package:stour/screens/chatbot.dart';
 
 class GoogleMapsController extends StatefulWidget {
   const GoogleMapsController({super.key});
@@ -160,6 +161,24 @@ class _HomeState extends State<Home> {
           ),
         ),
         //bottomNavigationBar: HomeBottomBar(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ChatbotSupportScreen(),
+              ),
+            );
+          },
+          tooltip: 'Floating Action Button',
+          backgroundColor: Constants.palette3, // Custom color
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0), // Round shape
+          ),
+          elevation: 2.0,
+          child: const Icon(Icons.question_answer),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
     );
   }

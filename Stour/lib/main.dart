@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   getAllPlaceFood('place');
-  getAllPlaceFood('cuisines');
+  getAllPlaceFood('food');
   const GoogleMapsController();
   runApp(const MyApp());
 }

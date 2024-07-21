@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -10,10 +12,8 @@ void main() async {
   String jsonString = await rootBundle.loadString('assets/data.json');
   List<dynamic> jsonData = json.decode(jsonString);
 
-  // Reference to the Firestore collection
-  CollectionReference places = FirebaseFirestore.instance.collection('place');
+  CollectionReference places = FirebaseFirestore.instance.collection('food');
 
-  // Loop through the JSON data and add each item to Firestore
   for (var item in jsonData) {
     item.remove('_id');
     await places

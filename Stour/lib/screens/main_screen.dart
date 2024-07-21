@@ -4,14 +4,17 @@ import 'package:stour/screens/home.dart';
 import 'package:stour/screens/timeline.dart';
 import 'package:stour/util/const.dart';
 import 'package:stour/screens/profile.dart';
+import 'package:stour/screens/chatbot.dart';
 
 List icons = [
+  Icons.chat_outlined,
   Icons.timeline_outlined,
   Icons.home_outlined,
   Icons.person_outline,
 ];
 
 List<Widget> pages = [
+  const ChatbotSupportScreen(),
   const Timeline(),
   const Home(),
   const Profile(),
@@ -44,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
               physics: const NeverScrollableScrollPhysics(),
               controller: _pageController,
               // onPageChanged: onPageChanged,
-              children: List.generate(3, (index) => pages[index]),
+              children: List.generate(4, (index) => pages[index]),
             ),
           ),
         ],
@@ -58,7 +61,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    _pageController = PageController(initialPage: 1);
+    _pageController = PageController(initialPage: 2);
     super.initState();
   }
 
@@ -76,13 +79,14 @@ class HomeBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: Constants.palette3,
-      buttonBackgroundColor: Constants.palette1,
-      index: 1,
+      backgroundColor: Constants.palette2,
+      buttonBackgroundColor: Constants.palette3,
+      index: 2,
       items: [
-        Icon(icons[0], size: 30, color: Constants.palette2),
-        Icon(icons[1], size: 30, color: Constants.palette2),
-        Icon(icons[2], size: 30, color: Constants.palette2),
+        Icon(icons[0], size: 30, color: Constants.paletteDark),
+        Icon(icons[1], size: 30, color: Constants.paletteDark),
+        Icon(icons[2], size: 30, color: Constants.paletteDark),
+        Icon(icons[3], size: 30, color: Constants.paletteDark),
       ],
       onTap: onTap,
     );

@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:stour/screens/view_saved_tour.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stour/util/const.dart';
+import 'package:stour/screens/chatbot.dart';
 
 class SavedTour extends StatefulWidget {
   const SavedTour({super.key});
@@ -152,6 +153,24 @@ class _SavedTourState extends State<SavedTour> {
             ),
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ChatbotSupportScreen(),
+              ),
+            );
+          },
+          tooltip: 'Floating Action Button',
+          backgroundColor: Constants.palette3, // Custom color
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0), // Round shape
+          ),
+          elevation: 2.0,
+          child: const Icon(Icons.question_answer),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       );
     }
     return Scaffold(
@@ -199,6 +218,24 @@ class _SavedTourState extends State<SavedTour> {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatbotSupportScreen(),
+            ),
+          );
+        },
+        tooltip: 'Floating Action Button',
+        backgroundColor: Constants.palette3, // Custom color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Round shape
+        ),
+        elevation: 2.0,
+        child: const Icon(Icons.question_answer),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

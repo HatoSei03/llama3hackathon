@@ -3,6 +3,7 @@ import 'package:stour/util/const.dart';
 import 'package:stour/util/places.dart';
 import 'package:stour/widgets/timeline_day.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stour/screens/chatbot.dart';
 
 // ignore: must_be_immutable
 class ViewSavedTour extends StatefulWidget {
@@ -100,6 +101,24 @@ class _ViewSavedTourState extends State<ViewSavedTour> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatbotSupportScreen(),
+            ),
+          );
+        },
+        tooltip: 'Floating Action Button',
+        backgroundColor: Constants.palette3, // Custom color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Round shape
+        ),
+        elevation: 2.0,
+        child: const Icon(Icons.question_answer),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

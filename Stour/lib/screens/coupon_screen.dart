@@ -3,6 +3,7 @@ import 'package:stour/util/coupon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stour/util/const.dart';
 import 'package:stour/screens/question_screen.dart';
+import 'package:stour/screens/chatbot.dart';
 
 class CouponScreen extends StatefulWidget {
   const CouponScreen({super.key});
@@ -60,6 +61,24 @@ class _CouponScreenState extends State<CouponScreen> {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatbotSupportScreen(),
+            ),
+          );
+        },
+        tooltip: 'Floating Action Button',
+        backgroundColor: Constants.palette3, // Custom color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Round shape
+        ),
+        elevation: 2.0,
+        child: const Icon(Icons.question_answer),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

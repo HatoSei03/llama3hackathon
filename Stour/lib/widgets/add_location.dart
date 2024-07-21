@@ -28,7 +28,7 @@ class _AddLocationState extends State<AddLocation> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'THÊM ĐỊA ĐIỂM',
+          'Add Location',
           style: GoogleFonts.roboto(
             color: const Color.fromARGB(255, 35, 52, 10),
           ),
@@ -41,7 +41,7 @@ class _AddLocationState extends State<AddLocation> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
       ),
       body: Column(
         children: [
@@ -52,7 +52,7 @@ class _AddLocationState extends State<AddLocation> {
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Text(
-                  'Thêm hoặc bỏ địa điểm ra khỏi lịch trình bằng danh sách bên dưới: ',
+                  'Add or remove attractions from your tour: ',
                   style: GoogleFonts.roboto(fontSize: 18),
                 ),
               ),

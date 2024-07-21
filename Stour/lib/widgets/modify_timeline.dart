@@ -34,7 +34,7 @@ class _ModifyTimelineState extends State<ModifyTimeline> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'CHỈNH SỬA LỊCH TRÌNH',
+          'Modify Timeline',
           style: TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),
@@ -47,7 +47,7 @@ class _ModifyTimelineState extends State<ModifyTimeline> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -78,7 +78,7 @@ class _ModifyTimelineState extends State<ModifyTimeline> {
                 ),
                 margin: const EdgeInsets.symmetric(vertical: 4.0),
                 child: ListTile(
-                  title: Text('Thêm Hoặc Bỏ Chọn Địa Điểm',
+                  title: Text('Add or Remove Attractions',
                       style: TextStyle(color: Constants.text)),
                   leading: const Icon(Icons.add_circle_outline_outlined),
                 ),

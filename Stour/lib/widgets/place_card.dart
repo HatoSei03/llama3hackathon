@@ -128,7 +128,7 @@ class _PlaceCardState extends State<PlaceCard> {
                 ),
                 const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Text(

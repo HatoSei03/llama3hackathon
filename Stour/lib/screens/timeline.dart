@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:stour/screens/timeline_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:stour/util/const.dart';
+import 'package:stour/screens/chatbot.dart';
 
 class Timeline extends StatefulWidget {
   const Timeline({super.key});
@@ -18,7 +19,16 @@ class _TimelineState extends State<Timeline> {
   bool _isTravelingAlone = true;
   TimeOfDay _startTime = const TimeOfDay(hour: 0, minute: 0);
   TimeOfDay _endTime = const TimeOfDay(hour: 0, minute: 0);
+  // ignore: unused_field
   int _travellerNum = 1;
+  String _currentLocation = 'Ho Chi Minh city';
+  List<String> cities = [
+    "Ho Chi Minh city",
+    "Ha Noi",
+    "Da Nang",
+    "Hoi An",
+    "Can Tho"
+  ];
 
   void _generateSchedule() {
     {
@@ -65,6 +75,79 @@ class _TimelineState extends State<Timeline> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Icon(
+                    Icons.location_pin, // or Icons.map
+                    size: 25,
+                    color: Constants.paletteDark,
+                  ),
+                  const SizedBox(width: 4.0),
+                  Text(
+                    'Location:',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Constants.paletteDark,
+                    ),
+                  ),
+                  const SizedBox(width: 8.0),
+                  GestureDetector(
+                    onTap: () async {
+                      final String? picked = await showDialog<String>(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('Select Location'),
+                            content: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  for (int i = 0; i < cities.length; i++)
+                                    ListTile(
+                                      title: Text(
+                                        cities[i],
+                                        style: TextStyle(
+                                          color: Constants.paletteDark,
+                                        ),
+                                      ),
+                                      onTap: () {
+                                        Navigator.pop(context, cities[i]);
+                                      },
+                                    ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                      if (picked != null) {
+                        setState(() {
+                          _currentLocation = picked;
+                        });
+                      }
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          _currentLocation,
+                          style: const TextStyle(
+                              color: Color(0xFF508C9B),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        const SizedBox(width: 4.0),
+                        const Icon(
+                          Icons.edit, // or Icons.map
+                          size: 16,
+                          color: Color(0xFF508C9B),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 32.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -348,10 +431,38 @@ class _TimelineState extends State<Timeline> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 40,
+              ),
+              const Text(
+                '*Note: The budget is an estimated cost for the attractions, transportation fees and meals are not included. Please take this factor into consideration.',
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontStyle: FontStyle.italic),
+              ),
             ],
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatbotSupportScreen(),
+            ),
+          );
+        },
+        tooltip: 'Floating Action Button',
+        backgroundColor: Constants.palette3, // Custom color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Round shape
+        ),
+        elevation: 2.0,
+        child: const Icon(Icons.question_answer),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

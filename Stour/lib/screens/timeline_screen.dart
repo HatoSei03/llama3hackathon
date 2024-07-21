@@ -4,6 +4,7 @@ import 'package:stour/util/places.dart';
 import 'package:stour/widgets/timeline_day.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uuid/uuid.dart';
+import 'package:stour/screens/chatbot.dart';
 
 class ScheduleScreen extends StatefulWidget {
   final DateTime departureDate;
@@ -46,10 +47,11 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     List<List<Place>> locations = [];
     for (int i = 0; i < places.length; i++) {
       if (places[i].closeTime <
-              (widget.startTime.hour + widget.startTime.minute / 60) ||
-          places[i].openTime >
-              (widget.endTime.hour + widget.endTime.minute / 60) ||
-          places[i].city != currentLocationDetail[1]) {
+                  (widget.startTime.hour + widget.startTime.minute / 60) ||
+              places[i].openTime >
+                  (widget.endTime.hour + widget.endTime.minute / 60)
+          // ||places[i].city != currentLocationDetail[1]
+          ) {
         continue;
       }
       Place tmpFood = food[i % food.length];
@@ -61,7 +63,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   }
 
   List<List<Place>> executeAlgo() {
-    print("executed");
     double budget = widget.maxBudget;
     int interval =
         widget.returnDate.difference(widget.departureDate).inDays + 1;
@@ -102,7 +103,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     if (res.isEmpty) {
       res = executeAlgo();
     }
-    print(res);
     double totalMoney = 0;
     for (int i = 0; i < res.length; i++) {
       for (int j = 0; j < res[i].length; j++) {
@@ -291,6 +291,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                             'Save this schedule',
                             style: TextStyle(
                               color: Color.fromARGB(255, 35, 52, 10),
+                              fontSize: 12,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -313,6 +314,24 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ChatbotSupportScreen(),
+            ),
+          );
+        },
+        tooltip: 'Floating Action Button',
+        backgroundColor: Constants.palette3, // Custom color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0), // Round shape
+        ),
+        elevation: 2.0,
+        child: const Icon(Icons.question_answer),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

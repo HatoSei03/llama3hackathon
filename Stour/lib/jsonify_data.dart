@@ -5,10 +5,12 @@ import 'package:flutter/services.dart';
 String jsonData = '';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,22 +24,22 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Textbox(jsonData),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
                         Clipboard.setData(ClipboardData(text: jsonData));
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                               content: Text('JSON data copied to clipboard')),
                         );
                       },
-                      child: Text('Save to clipboard'),
+                      child: const Text('Save to clipboard'),
                     ),
                   ],
                 ),
               );
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -134,7 +136,7 @@ Freely explore the local markets and streets.
 class Textbox extends StatelessWidget {
   final String text;
 
-  Textbox(this.text);
+  const Textbox(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +151,7 @@ class Textbox extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Text(
           text,
-          style: TextStyle(fontSize: 12),
+          style: const TextStyle(fontSize: 12),
         ),
       ),
     );

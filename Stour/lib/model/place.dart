@@ -16,12 +16,12 @@ void getAllPlaceFood(String collection) {
           id: data['id'],
           name: data['name'],
           address: data['address'],
-          rating: data['rating'] ?? 0, // If 'rating' is null, use 0 instead
+          rating: data['rating'] ?? 0, 
           img: data['image'],
-          price: data['price'] ?? 0, // If 'price' is null, use 0 instead
+          price: data['price'] ?? 0,
           history: data['history'],
           duration:
-              data['duration'] ?? 0, // If 'duration' is null, use 0 instead
+              data['duration'] ?? 2, 
           city: data['city'],
           closeTime: data['closetime'],
           district: data['district'],
