@@ -18,6 +18,7 @@ class _TimelineState extends State<Timeline> {
   bool _isTravelingAlone = true;
   TimeOfDay _startTime = const TimeOfDay(hour: 0, minute: 0);
   TimeOfDay _endTime = const TimeOfDay(hour: 0, minute: 0);
+  int _travellerNum = 1;
 
   void _generateSchedule() {
     {
@@ -216,13 +217,38 @@ class _TimelineState extends State<Timeline> {
                       });
                     },
                   ),
-                  const Text('No',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 35, 52, 10),
-                        fontWeight: FontWeight.w800,
-                      )),
+                  const Text(
+                    'No',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 35, 52, 10),
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ],
               ),
+              if (!_isTravelingAlone)
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: TextFormField(
+                    textAlignVertical: TextAlignVertical.bottom,
+                    keyboardType: TextInputType.number,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
+                    onChanged: (value) {
+                      setState(() {
+                        _travellerNum = int.tryParse(value) ?? 1;
+                      });
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Enter number of travelers',
+                      prefixIcon: Icon(
+                        Icons.group,
+                        color: Constants.paletteDark,
+                      ),
+                    ),
+                  ),
+                ),
               const SizedBox(height: 16.0),
               Row(
                 children: [

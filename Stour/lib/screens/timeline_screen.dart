@@ -61,6 +61,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   }
 
   List<List<Place>> executeAlgo() {
+    print("executed");
     double budget = widget.maxBudget;
     int interval =
         widget.returnDate.difference(widget.departureDate).inDays + 1;
@@ -101,6 +102,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     if (res.isEmpty) {
       res = executeAlgo();
     }
+    print(res);
     double totalMoney = 0;
     for (int i = 0; i < res.length; i++) {
       for (int j = 0; j < res[i].length; j++) {

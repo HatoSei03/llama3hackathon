@@ -30,7 +30,7 @@ class _ViewSavedTourState extends State<ViewSavedTour> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Constants.lightgreen,
+        backgroundColor: Constants.palette3,
         title: Text(
           widget.savedTour.name,
           style: const TextStyle(
@@ -63,7 +63,7 @@ class _ViewSavedTourState extends State<ViewSavedTour> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Tổng Quan',
+                        'Overall Information',
                         style: GoogleFonts.roboto(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -71,13 +71,13 @@ class _ViewSavedTourState extends State<ViewSavedTour> {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        'Số ngày: ${widget.savedTour.addedPlaces.length}',
+                        'Days: ${widget.savedTour.addedPlaces.length}',
                         style: GoogleFonts.roboto(
                           fontSize: 14,
                         ),
                       ),
                       Text(
-                        'Số tiền ước tính: ${totalMoney.toStringAsFixed(0)}₫',
+                        'Budget: ${totalMoney.toStringAsFixed(0)}₫',
                         style: GoogleFonts.roboto(
                           fontSize: 14,
                         ),
