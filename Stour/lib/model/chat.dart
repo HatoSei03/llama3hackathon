@@ -18,5 +18,5 @@ List<Chat> messageList = [
     content: 'Hello, how can I help you?',
     time: '10:00 AM',
     isMe: false,
-  ),
+  )
 ];

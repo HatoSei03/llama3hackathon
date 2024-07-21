@@ -14,7 +14,7 @@ class Constants {
   static Color darkAccent = const Color.fromARGB(255, 183, 189, 240);
   static Color lightpp = const Color.fromARGB(255, 183, 189, 240);
   static Color darkpp = const Color(0xFF848ccf); // màu shadow
-  static Color lightBG = Color.fromARGB(249, 243, 243, 243);
+  static Color lightBG = const Color.fromARGB(249, 243, 243, 243);
   static Color darkBG = const Color.fromARGB(0, 0, 0, 0);
   static Color ratingBG = const Color(0xFFfff000);
 

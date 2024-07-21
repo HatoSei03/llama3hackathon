@@ -229,7 +229,7 @@ Widget buildPlaceRow(String place, List<Place> source, BuildContext context) {
             context,
             MaterialPageRoute(
               builder: (BuildContext context) {
-                return Trending(source: source);
+                return Trending(name: place, source: source);
               },
             ),
           );

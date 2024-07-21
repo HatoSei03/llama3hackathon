@@ -37,7 +37,7 @@ class SearchCard extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(5.0),
           ),
-          hintText: "Nhập từ khóa để tìm kiếm...",
+          hintText: "Search for...",
           prefixIcon: const Icon(
             Icons.search,
             color: Color.fromARGB(255, 35, 52, 10),

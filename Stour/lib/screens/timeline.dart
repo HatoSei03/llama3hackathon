@@ -435,7 +435,7 @@ class _TimelineState extends State<Timeline> {
                 height: 40,
               ),
               const Text(
-                '*Note: The budget is an estimated cost for the attractions, transportation fees and meals are not included. Please take this factor into consideration.',
+                '*Note: The budget is an estimated cost for the accommodations, transportation fees are not included. Please take this factor into consideration.',
                 style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey,

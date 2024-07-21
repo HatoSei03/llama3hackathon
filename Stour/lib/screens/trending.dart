@@ -5,19 +5,19 @@ import 'package:stour/widgets/search_card.dart';
 import 'package:stour/widgets/trending_place.dart';
 import 'package:stour/screens/chatbot.dart';
 
-
 class Trending extends StatelessWidget {
   final List<Place> source;
-  const Trending({super.key, required this.source});
+  final String name;
+  const Trending({super.key, required this.name, required this.source});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Constants.palette3,
-        title: const Text(
-          "Cultural Attractions",
-          style: TextStyle(
+        title: Text(
+          name,
+          style: const TextStyle(
             color: Color.fromARGB(255, 35, 52, 10),
           ),
         ),

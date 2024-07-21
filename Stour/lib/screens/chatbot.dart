@@ -13,11 +13,11 @@ class ChatbotSupportScreen extends StatefulWidget {
 
 class _ChatbotSupportScreenState extends State<ChatbotSupportScreen> {
   final TextEditingController _messageController = TextEditingController();
-  // List<Chat> messageList = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Constants.lightBG,
       appBar: AppBar(
         backgroundColor: Constants.palette3,
         title: Text('Chatbot Support',
@@ -123,6 +123,7 @@ class _ChatbotSupportScreenState extends State<ChatbotSupportScreen> {
                             time: DateFormat('hh:mm a').format(DateTime.now()),
                             isMe: true,
                           ));
+
                           FirebaseFirestore.instance.collection('chat').add({
                             'content': _messageController.text,
                             'time': DateTime.now(),

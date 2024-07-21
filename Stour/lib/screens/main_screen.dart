@@ -35,6 +35,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Constants.lightBG,
       bottomNavigationBar: HomeBottomBar(
         onTap: navigationTapped,
       ),
